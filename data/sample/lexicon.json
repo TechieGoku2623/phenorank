@@ -1,0 +1,38 @@
+{
+  "entries": [
+    {"hpo_id": "HP:0001250", "phrases": ["seizures", "seizure", "epilepsy", "fits", "convulsions"]},
+    {"hpo_id": "HP:0001251", "phrases": ["ataxia", "unsteady gait", "wobbly walk"]},
+    {"hpo_id": "HP:0001290", "phrases": ["generalized hypotonia", "hypotonia", "floppy baby", "low tone", "floppy"]},
+    {"hpo_id": "HP:0000252", "phrases": ["microcephaly", "small head"]},
+    {"hpo_id": "HP:0001263", "phrases": ["global developmental delay", "developmental delay", "late milestones"]},
+    {"hpo_id": "HP:0001249", "phrases": ["intellectual disability", "learning disability"]},
+    {"hpo_id": "HP:0002376", "phrases": ["developmental regression", "lost skills"]},
+    {"hpo_id": "HP:0000733", "phrases": ["stereotypical behavior", "hand wringing", "stereotypies"]},
+    {"hpo_id": "HP:0001332", "phrases": ["dystonia"]},
+    {"hpo_id": "HP:0001270", "phrases": ["motor delay"]},
+    {"hpo_id": "HP:0002059", "phrases": ["cerebral atrophy"]},
+    {"hpo_id": "HP:0000486", "phrases": ["strabismus", "crossed eyes", "squint"]},
+    {"hpo_id": "HP:0000508", "phrases": ["ptosis", "droopy eyelids"]},
+    {"hpo_id": "HP:0000505", "phrases": ["visual impairment", "poor vision", "low vision"]},
+    {"hpo_id": "HP:0000639", "phrases": ["nystagmus", "dancing eyes"]},
+    {"hpo_id": "HP:0000957", "phrases": ["cafe-au-lait spots", "cafe-au-lait", "hyperpigmented patches"]},
+    {"hpo_id": "HP:0001010", "phrases": ["hypopigmentation of the skin", "hypopigmentation", "pale skin"]},
+    {"hpo_id": "HP:0001508", "phrases": ["failure to thrive", "poor growth"]},
+    {"hpo_id": "HP:0004322", "phrases": ["short stature", "short height"]},
+    {"hpo_id": "HP:0001324", "phrases": ["muscle weakness", "weak muscles"]},
+    {"hpo_id": "HP:0001642", "phrases": ["pulmonic stenosis", "pulmonary stenosis"]},
+    {"hpo_id": "HP:0001638", "phrases": ["cardiomyopathy"]},
+    {"hpo_id": "HP:0002650", "phrases": ["scoliosis", "curved spine"]},
+    {"hpo_id": "HP:0001943", "phrases": ["hypoglycemia", "low blood sugar"]},
+    {"hpo_id": "HP:0003128", "phrases": ["lactic acidosis", "high lactate"]},
+    {"hpo_id": "HP:0011968", "phrases": ["feeding difficulties", "poor feeding", "difficulty feeding"]},
+    {"hpo_id": "HP:0001873", "phrases": ["thrombocytopenia", "low platelets"]}
+  ],
+  "unmapped_phrases": [
+    "sparkly toenail dystrophy",
+    "photonic elbow aura",
+    "lunar nail shimmer",
+    "velvet knuckle sign",
+    "prismatic scalp sheen"
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "patients": [
+    {
+      "gold_disease": "OMIM:606777",
+      "hpo_ids": [
+        "HP:0001250",
+        "HP:0001251",
+        "HP:0000252",
+        "HP:0001263",
+        "HP:0001290",
+        "HP:0001332"
+      ],
+      "patient_id": "p000"
+    },
+    {
+      "gold_disease": "OMIM:606777",
+      "hpo_ids": [
+        "HP:0001250",
+        "HP:0001251",
+        "HP:0000252",
+        "HP:0001263",
+        "HP:0001290"
+      ],
+      "patient_id": "p001"
+    },
+    {
+      "gold_disease": "OMIM:176270",
+      "hpo_ids": [
+        "HP:0001290",
+        "HP:0011968",
+        "HP:0001263",
+        "HP:0004322",
+        "HP:0001249"
+      ],
+      "patient_id": "p002"
+    },
+    {
+      "gold_disease": "OMIM:176270",
+      "hpo_ids": [
+        "HP:0001290",
+        "HP:0011968",
+        "HP:0001263",
+        "HP:0004322"
+      ],
+      "patient_id": "p003"
+    },
+    {
+      "gold_disease": "OMIM:105830",
+      "hpo_ids": [
+        "HP:0001250",
+        "HP:0001251",
+        "HP:0001263",
+        "HP:0000252",
+        "HP:0001249",
+        "HP:0000733"
+      ],
+      "patient_id": "p004"
+    },
+    {
+      "gold_disease": "OMIM:105830",
+      "hpo_ids": [
+        "HP:0001250",
+        "HP:0001251",
+        "HP:0001263",
+        "HP:0000252",
+        "HP:0001249"
+      ],
+      "patient_id": "p005"
+    },
+    {
+      "gold_disease": "OMIM:312750",
+      "hpo_ids": [
+        "HP:0001250",
+        "HP:0002376",
+        "HP:0000733",
+        "HP:0000252",
+        "HP:0001249"
+      ],
+      "patient_id": "p006"
+    },
+    {
+      "gold_disease": "OMIM:312750",
+      "hpo_ids": [
+        "HP:0001250",
+        "HP:0002376",
+        "HP:0000733",
+        "HP:0000252"
+      ],
+      "patient_id": "p007"
+    },
+    {
+      "gold_disease": "OMIM:163950",
+      "hpo_ids": [
+        "HP:0000508",
+        "HP:0001642",
+        "HP:0004322",
+        "HP:0002650",
+        "HP:0001508"
+      ],
+      "patient_id": "p008"
+    },
+    {
+      "gold_disease": "OMIM:163950",
+      "hpo_ids": [
+        "HP:0000508",
+        "HP:0001642",
+        "HP:0004322",
+        "HP:0002650"
+      ],
+      "patient_id": "p009"
+    },
+    {
+      "gold_disease": "OMIM:203100",
+      "hpo_ids": [
+        "HP:0000639",
+        "HP:0001010",
+        "HP:0000505"
+      ],
+      "patient_id": "p010"
+    },
+    {
+      "gold_disease": "OMIM:203100",
+      "hpo_ids": [
+        "HP:0000639",
+        "HP:0001010"
+      ],
+      "patient_id": "p011"
+    },
+    {
+      "gold_disease": "SYN:GDD-nonspecific",
+      "hpo_ids": [
+        "HP:0001263",
+        "HP:0001508"
+      ],
+      "patient_id": "p012"
+    },
+    {
+      "gold_disease": "SYN:GDD-nonspecific",
+      "hpo_ids": [
+        "HP:0001263"
+      ],
+      "patient_id": "p013"
+    },
+    {
+      "gold_disease": "SYN:mito-enceph",
+      "hpo_ids": [
+        "HP:0001250",
+        "HP:0001251",
+        "HP:0001290",
+        "HP:0003128",
+        "HP:0001263",
+        "HP:0001638"
+      ],
+      "patient_id": "p014"
+    },
+    {
+      "gold_disease": "SYN:mito-enceph",
+      "hpo_ids": [
+        "HP:0001250",
+        "HP:0001251",
+        "HP:0001290",
+        "HP:0003128",
+        "HP:0001263"
+      ],
+      "patient_id": "p015"
+    },
+    {
+      "gold_disease": "SYN:cong-myopathy",
+      "hpo_ids": [
+        "HP:0001290",
+        "HP:0001324",
+        "HP:0011968"
+      ],
+      "patient_id": "p016"
+    },
+    {
+      "gold_disease": "SYN:cong-myopathy",
+      "hpo_ids": [
+        "HP:0001290",
+        "HP:0001324"
+      ],
+      "patient_id": "p017"
+    },
+    {
+      "gold_disease": "OMIM:162200",
+      "hpo_ids": [
+        "HP:0000957",
+        "HP:0002650",
+        "HP:0004322"
+      ],
+      "patient_id": "p018"
+    },
+    {
+      "gold_disease": "OMIM:162200",
+      "hpo_ids": [
+        "HP:0000957",
+        "HP:0002650"
+      ],
+      "patient_id": "p019"
+    },
+    {
+      "gold_disease": "SYN:seizure-ataxia-trap",
+      "hpo_ids": [
+        "HP:0001250",
+        "HP:0001251",
+        "HP:0001290",
+        "HP:0011968",
+        "HP:0004322"
+      ],
+      "patient_id": "p020"
+    },
+    {
+      "gold_disease": "SYN:seizure-ataxia-trap",
+      "hpo_ids": [
+        "HP:0001250",
+        "HP:0001251",
+        "HP:0001290",
+        "HP:0011968"
+      ],
+      "patient_id": "p021"
+    }
+  ],
+  "seed": 0
+}

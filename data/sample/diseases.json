@@ -1,0 +1,59 @@
+{
+  "diseases": [
+    {
+      "id": "OMIM:606777",
+      "name": "GLUT1 deficiency syndrome",
+      "hpo_ids": ["HP:0001250", "HP:0001251", "HP:0000252", "HP:0001263", "HP:0001290", "HP:0001332"]
+    },
+    {
+      "id": "OMIM:176270",
+      "name": "Prader-Willi syndrome",
+      "hpo_ids": ["HP:0001290", "HP:0011968", "HP:0001263", "HP:0004322", "HP:0001249"]
+    },
+    {
+      "id": "OMIM:105830",
+      "name": "Angelman syndrome",
+      "hpo_ids": ["HP:0001250", "HP:0001251", "HP:0001263", "HP:0000252", "HP:0001249", "HP:0000733"]
+    },
+    {
+      "id": "OMIM:312750",
+      "name": "Rett syndrome",
+      "hpo_ids": ["HP:0001250", "HP:0002376", "HP:0000733", "HP:0000252", "HP:0001249"]
+    },
+    {
+      "id": "OMIM:163950",
+      "name": "Noonan syndrome",
+      "hpo_ids": ["HP:0000508", "HP:0001642", "HP:0004322", "HP:0002650", "HP:0001508"]
+    },
+    {
+      "id": "OMIM:203100",
+      "name": "Oculocutaneous albinism",
+      "hpo_ids": ["HP:0000639", "HP:0001010", "HP:0000505"]
+    },
+    {
+      "id": "SYN:GDD-nonspecific",
+      "name": "Nonspecific developmental delay profile",
+      "hpo_ids": ["HP:0001263", "HP:0001508"]
+    },
+    {
+      "id": "SYN:mito-enceph",
+      "name": "Mitochondrial encephalopathy (toy profile)",
+      "hpo_ids": ["HP:0001250", "HP:0001251", "HP:0001290", "HP:0003128", "HP:0001263", "HP:0001638"]
+    },
+    {
+      "id": "SYN:cong-myopathy",
+      "name": "Congenital myopathy (toy profile)",
+      "hpo_ids": ["HP:0001290", "HP:0001324", "HP:0011968"]
+    },
+    {
+      "id": "OMIM:162200",
+      "name": "Neurofibromatosis type 1",
+      "hpo_ids": ["HP:0000957", "HP:0002650", "HP:0004322"]
+    },
+    {
+      "id": "SYN:seizure-ataxia-trap",
+      "name": "Seizure-ataxia trap profile",
+      "hpo_ids": ["HP:0001250", "HP:0001251", "HP:0001290", "HP:0011968", "HP:0004322"]
+    }
+  ]
+}

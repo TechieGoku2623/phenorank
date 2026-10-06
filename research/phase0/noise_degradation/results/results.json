@@ -1,0 +1,63 @@
+{
+  "cells": {
+    "drop_0.0_noise_0": {
+      "accuracy": 1.0,
+      "drop": 0.0,
+      "n": 11.0,
+      "noise": 0
+    },
+    "drop_0.0_noise_1": {
+      "accuracy": 1.0,
+      "drop": 0.0,
+      "n": 11.0,
+      "noise": 1
+    },
+    "drop_0.0_noise_2": {
+      "accuracy": 1.0,
+      "drop": 0.0,
+      "n": 11.0,
+      "noise": 2
+    },
+    "drop_0.3_noise_0": {
+      "accuracy": 0.8181818181818182,
+      "drop": 0.3,
+      "n": 11.0,
+      "noise": 0
+    },
+    "drop_0.3_noise_1": {
+      "accuracy": 0.8181818181818182,
+      "drop": 0.3,
+      "n": 11.0,
+      "noise": 1
+    },
+    "drop_0.3_noise_2": {
+      "accuracy": 0.8181818181818182,
+      "drop": 0.3,
+      "n": 11.0,
+      "noise": 2
+    },
+    "drop_0.5_noise_0": {
+      "accuracy": 0.5454545454545454,
+      "drop": 0.5,
+      "n": 11.0,
+      "noise": 0
+    },
+    "drop_0.5_noise_1": {
+      "accuracy": 0.5454545454545454,
+      "drop": 0.5,
+      "n": 11.0,
+      "noise": 1
+    },
+    "drop_0.5_noise_2": {
+      "accuracy": 0.5454545454545454,
+      "drop": 0.5,
+      "n": 11.0,
+      "noise": 2
+    }
+  },
+  "clean_top1": 1.0,
+  "decision": "The approach survives realistic input (harsh-cell top-1 \u2265 0.50).",
+  "harsh_top1": 0.5454545454545454,
+  "seed": 0,
+  "survives_realistic_input": true
+}

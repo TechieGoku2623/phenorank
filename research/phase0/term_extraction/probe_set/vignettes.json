@@ -1,0 +1,851 @@
+{
+  "n": 50,
+  "seed": 0,
+  "vignettes": [
+    {
+      "vignette_id": "v01",
+      "text": "Toddler with seizures and ataxia.",
+      "mentions": [
+        {
+          "surface": "seizures",
+          "hpo_id": "HP:0001250",
+          "polarity": "positive"
+        },
+        {
+          "surface": "ataxia",
+          "hpo_id": "HP:0001251",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v02",
+      "text": "Floppy baby with poor feeding.",
+      "mentions": [
+        {
+          "surface": "Floppy baby",
+          "hpo_id": "HP:0001290",
+          "polarity": "positive"
+        },
+        {
+          "surface": "poor feeding",
+          "hpo_id": "HP:0011968",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v03",
+      "text": "Child with microcephaly and global developmental delay.",
+      "mentions": [
+        {
+          "surface": "microcephaly",
+          "hpo_id": "HP:0000252",
+          "polarity": "positive"
+        },
+        {
+          "surface": "global developmental delay",
+          "hpo_id": "HP:0001263",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v04",
+      "text": "Patient with ptosis and pulmonic stenosis.",
+      "mentions": [
+        {
+          "surface": "ptosis",
+          "hpo_id": "HP:0000508",
+          "polarity": "positive"
+        },
+        {
+          "surface": "pulmonic stenosis",
+          "hpo_id": "HP:0001642",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v05",
+      "text": "Adult with nystagmus and visual impairment.",
+      "mentions": [
+        {
+          "surface": "nystagmus",
+          "hpo_id": "HP:0000639",
+          "polarity": "positive"
+        },
+        {
+          "surface": "visual impairment",
+          "hpo_id": "HP:0000505",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v06",
+      "text": "Child with scoliosis and cafe-au-lait spots.",
+      "mentions": [
+        {
+          "surface": "scoliosis",
+          "hpo_id": "HP:0002650",
+          "polarity": "positive"
+        },
+        {
+          "surface": "cafe-au-lait spots",
+          "hpo_id": "HP:0000957",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v07",
+      "text": "Infant with lactic acidosis and cardiomyopathy.",
+      "mentions": [
+        {
+          "surface": "lactic acidosis",
+          "hpo_id": "HP:0003128",
+          "polarity": "positive"
+        },
+        {
+          "surface": "cardiomyopathy",
+          "hpo_id": "HP:0001638",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v08",
+      "text": "Toddler with dystonia and seizures.",
+      "mentions": [
+        {
+          "surface": "dystonia",
+          "hpo_id": "HP:0001332",
+          "polarity": "positive"
+        },
+        {
+          "surface": "seizures",
+          "hpo_id": "HP:0001250",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v09",
+      "text": "Child with developmental regression and stereotypical behavior.",
+      "mentions": [
+        {
+          "surface": "developmental regression",
+          "hpo_id": "HP:0002376",
+          "polarity": "positive"
+        },
+        {
+          "surface": "stereotypical behavior",
+          "hpo_id": "HP:0000733",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v10",
+      "text": "Infant with muscle weakness and hypotonia.",
+      "mentions": [
+        {
+          "surface": "muscle weakness",
+          "hpo_id": "HP:0001324",
+          "polarity": "positive"
+        },
+        {
+          "surface": "hypotonia",
+          "hpo_id": "HP:0001290",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v11",
+      "text": "Patient with short stature and failure to thrive.",
+      "mentions": [
+        {
+          "surface": "short stature",
+          "hpo_id": "HP:0004322",
+          "polarity": "positive"
+        },
+        {
+          "surface": "failure to thrive",
+          "hpo_id": "HP:0001508",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v12",
+      "text": "Child with intellectual disability and motor delay.",
+      "mentions": [
+        {
+          "surface": "intellectual disability",
+          "hpo_id": "HP:0001249",
+          "polarity": "positive"
+        },
+        {
+          "surface": "motor delay",
+          "hpo_id": "HP:0001270",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v13",
+      "text": "Toddler with strabismus and ptosis.",
+      "mentions": [
+        {
+          "surface": "strabismus",
+          "hpo_id": "HP:0000486",
+          "polarity": "positive"
+        },
+        {
+          "surface": "ptosis",
+          "hpo_id": "HP:0000508",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v14",
+      "text": "Infant with hypoglycemia and seizures.",
+      "mentions": [
+        {
+          "surface": "hypoglycemia",
+          "hpo_id": "HP:0001943",
+          "polarity": "positive"
+        },
+        {
+          "surface": "seizures",
+          "hpo_id": "HP:0001250",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v15",
+      "text": "Child with thrombocytopenia and scoliosis.",
+      "mentions": [
+        {
+          "surface": "thrombocytopenia",
+          "hpo_id": "HP:0001873",
+          "polarity": "positive"
+        },
+        {
+          "surface": "scoliosis",
+          "hpo_id": "HP:0002650",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v16",
+      "text": "Patient with cerebral atrophy and microcephaly.",
+      "mentions": [
+        {
+          "surface": "cerebral atrophy",
+          "hpo_id": "HP:0002059",
+          "polarity": "positive"
+        },
+        {
+          "surface": "microcephaly",
+          "hpo_id": "HP:0000252",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v17",
+      "text": "Toddler with ataxia and dystonia.",
+      "mentions": [
+        {
+          "surface": "ataxia",
+          "hpo_id": "HP:0001251",
+          "polarity": "positive"
+        },
+        {
+          "surface": "dystonia",
+          "hpo_id": "HP:0001332",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v18",
+      "text": "Child with hypopigmentation of the skin and nystagmus.",
+      "mentions": [
+        {
+          "surface": "hypopigmentation of the skin",
+          "hpo_id": "HP:0001010",
+          "polarity": "positive"
+        },
+        {
+          "surface": "nystagmus",
+          "hpo_id": "HP:0000639",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v19",
+      "text": "Infant with poor feeding and failure to thrive.",
+      "mentions": [
+        {
+          "surface": "poor feeding",
+          "hpo_id": "HP:0011968",
+          "polarity": "positive"
+        },
+        {
+          "surface": "failure to thrive",
+          "hpo_id": "HP:0001508",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v20",
+      "text": "Patient with cardiomyopathy and muscle weakness.",
+      "mentions": [
+        {
+          "surface": "cardiomyopathy",
+          "hpo_id": "HP:0001638",
+          "polarity": "positive"
+        },
+        {
+          "surface": "muscle weakness",
+          "hpo_id": "HP:0001324",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v21",
+      "text": "Infant with hypotonia. No seizures.",
+      "mentions": [
+        {
+          "surface": "hypotonia",
+          "hpo_id": "HP:0001290",
+          "polarity": "positive"
+        },
+        {
+          "surface": "seizures",
+          "hpo_id": "HP:0001250",
+          "polarity": "negated"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v22",
+      "text": "Child with microcephaly. Ruled out ataxia.",
+      "mentions": [
+        {
+          "surface": "microcephaly",
+          "hpo_id": "HP:0000252",
+          "polarity": "positive"
+        },
+        {
+          "surface": "ataxia",
+          "hpo_id": "HP:0001251",
+          "polarity": "negated"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v23",
+      "text": "Toddler with feeding difficulties, without seizures.",
+      "mentions": [
+        {
+          "surface": "feeding difficulties",
+          "hpo_id": "HP:0011968",
+          "polarity": "positive"
+        },
+        {
+          "surface": "seizures",
+          "hpo_id": "HP:0001250",
+          "polarity": "negated"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v24",
+      "text": "Patient with short stature, negative for nystagmus.",
+      "mentions": [
+        {
+          "surface": "short stature",
+          "hpo_id": "HP:0004322",
+          "polarity": "positive"
+        },
+        {
+          "surface": "nystagmus",
+          "hpo_id": "HP:0000639",
+          "polarity": "negated"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v25",
+      "text": "Infant with hypotonia and feeding difficulties. No seizures. Ruled out ataxia.",
+      "mentions": [
+        {
+          "surface": "hypotonia",
+          "hpo_id": "HP:0001290",
+          "polarity": "positive"
+        },
+        {
+          "surface": "feeding difficulties",
+          "hpo_id": "HP:0011968",
+          "polarity": "positive"
+        },
+        {
+          "surface": "seizures",
+          "hpo_id": "HP:0001250",
+          "polarity": "negated"
+        },
+        {
+          "surface": "ataxia",
+          "hpo_id": "HP:0001251",
+          "polarity": "negated"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v26",
+      "text": "Child with global developmental delay, denied seizures.",
+      "mentions": [
+        {
+          "surface": "global developmental delay",
+          "hpo_id": "HP:0001263",
+          "polarity": "positive"
+        },
+        {
+          "surface": "seizures",
+          "hpo_id": "HP:0001250",
+          "polarity": "negated"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v27",
+      "text": "Toddler with ptosis, absent scoliosis.",
+      "mentions": [
+        {
+          "surface": "ptosis",
+          "hpo_id": "HP:0000508",
+          "polarity": "positive"
+        },
+        {
+          "surface": "scoliosis",
+          "hpo_id": "HP:0002650",
+          "polarity": "negated"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v28",
+      "text": "Patient with muscle weakness, never ataxia.",
+      "mentions": [
+        {
+          "surface": "muscle weakness",
+          "hpo_id": "HP:0001324",
+          "polarity": "positive"
+        },
+        {
+          "surface": "ataxia",
+          "hpo_id": "HP:0001251",
+          "polarity": "negated"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v29",
+      "text": "Infant with failure to thrive, free of seizures.",
+      "mentions": [
+        {
+          "surface": "failure to thrive",
+          "hpo_id": "HP:0001508",
+          "polarity": "positive"
+        },
+        {
+          "surface": "seizures",
+          "hpo_id": "HP:0001250",
+          "polarity": "negated"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v30",
+      "text": "Child with intellectual disability, no dystonia.",
+      "mentions": [
+        {
+          "surface": "intellectual disability",
+          "hpo_id": "HP:0001249",
+          "polarity": "positive"
+        },
+        {
+          "surface": "dystonia",
+          "hpo_id": "HP:0001332",
+          "polarity": "negated"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v31",
+      "text": "Toddler with strabismus, without nystagmus.",
+      "mentions": [
+        {
+          "surface": "strabismus",
+          "hpo_id": "HP:0000486",
+          "polarity": "positive"
+        },
+        {
+          "surface": "nystagmus",
+          "hpo_id": "HP:0000639",
+          "polarity": "negated"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v32",
+      "text": "Patient with cardiomyopathy, ruled out lactic acidosis.",
+      "mentions": [
+        {
+          "surface": "cardiomyopathy",
+          "hpo_id": "HP:0001638",
+          "polarity": "positive"
+        },
+        {
+          "surface": "lactic acidosis",
+          "hpo_id": "HP:0003128",
+          "polarity": "negated"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v33",
+      "text": "Infant with hypotonia, not seizures.",
+      "mentions": [
+        {
+          "surface": "hypotonia",
+          "hpo_id": "HP:0001290",
+          "polarity": "positive"
+        },
+        {
+          "surface": "seizures",
+          "hpo_id": "HP:0001250",
+          "polarity": "negated"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v34",
+      "text": "Child with cafe-au-lait spots, no pulmonic stenosis.",
+      "mentions": [
+        {
+          "surface": "cafe-au-lait spots",
+          "hpo_id": "HP:0000957",
+          "polarity": "positive"
+        },
+        {
+          "surface": "pulmonic stenosis",
+          "hpo_id": "HP:0001642",
+          "polarity": "negated"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v35",
+      "text": "Toddler with ataxia, denied developmental regression.",
+      "mentions": [
+        {
+          "surface": "ataxia",
+          "hpo_id": "HP:0001251",
+          "polarity": "positive"
+        },
+        {
+          "surface": "developmental regression",
+          "hpo_id": "HP:0002376",
+          "polarity": "negated"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v36",
+      "text": "Child with seizures and possible ataxia.",
+      "mentions": [
+        {
+          "surface": "seizures",
+          "hpo_id": "HP:0001250",
+          "polarity": "positive"
+        },
+        {
+          "surface": "ataxia",
+          "hpo_id": "HP:0001251",
+          "polarity": "uncertain"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v37",
+      "text": "Infant with hypotonia and suspected microcephaly.",
+      "mentions": [
+        {
+          "surface": "hypotonia",
+          "hpo_id": "HP:0001290",
+          "polarity": "positive"
+        },
+        {
+          "surface": "microcephaly",
+          "hpo_id": "HP:0000252",
+          "polarity": "uncertain"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v38",
+      "text": "Toddler with maybe nystagmus and visual impairment.",
+      "mentions": [
+        {
+          "surface": "nystagmus",
+          "hpo_id": "HP:0000639",
+          "polarity": "uncertain"
+        },
+        {
+          "surface": "visual impairment",
+          "hpo_id": "HP:0000505",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v39",
+      "text": "Patient with questionable ptosis and short stature.",
+      "mentions": [
+        {
+          "surface": "ptosis",
+          "hpo_id": "HP:0000508",
+          "polarity": "uncertain"
+        },
+        {
+          "surface": "short stature",
+          "hpo_id": "HP:0004322",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v40",
+      "text": "Child with global developmental delay and possible seizures.",
+      "mentions": [
+        {
+          "surface": "global developmental delay",
+          "hpo_id": "HP:0001263",
+          "polarity": "positive"
+        },
+        {
+          "surface": "seizures",
+          "hpo_id": "HP:0001250",
+          "polarity": "uncertain"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v41",
+      "text": "Infant with borderline hypotonia and feeding difficulties.",
+      "mentions": [
+        {
+          "surface": "hypotonia",
+          "hpo_id": "HP:0001290",
+          "polarity": "uncertain"
+        },
+        {
+          "surface": "feeding difficulties",
+          "hpo_id": "HP:0011968",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v42",
+      "text": "Toddler with probable dystonia and ataxia.",
+      "mentions": [
+        {
+          "surface": "dystonia",
+          "hpo_id": "HP:0001332",
+          "polarity": "uncertain"
+        },
+        {
+          "surface": "ataxia",
+          "hpo_id": "HP:0001251",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v43",
+      "text": "Patient with possibly lactic acidosis and cardiomyopathy.",
+      "mentions": [
+        {
+          "surface": "lactic acidosis",
+          "hpo_id": "HP:0003128",
+          "polarity": "uncertain"
+        },
+        {
+          "surface": "cardiomyopathy",
+          "hpo_id": "HP:0001638",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v44",
+      "text": "Child with suspected scoliosis and cafe-au-lait spots.",
+      "mentions": [
+        {
+          "surface": "scoliosis",
+          "hpo_id": "HP:0002650",
+          "polarity": "uncertain"
+        },
+        {
+          "surface": "cafe-au-lait spots",
+          "hpo_id": "HP:0000957",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v45",
+      "text": "Infant with possible strabismus and microcephaly.",
+      "mentions": [
+        {
+          "surface": "strabismus",
+          "hpo_id": "HP:0000486",
+          "polarity": "uncertain"
+        },
+        {
+          "surface": "microcephaly",
+          "hpo_id": "HP:0000252",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": []
+    },
+    {
+      "vignette_id": "v46",
+      "text": "Toddler with hypotonia and sparkly toenail dystrophy.",
+      "mentions": [
+        {
+          "surface": "hypotonia",
+          "hpo_id": "HP:0001290",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": [
+        "sparkly toenail dystrophy"
+      ]
+    },
+    {
+      "vignette_id": "v47",
+      "text": "Child with seizures and photonic elbow aura.",
+      "mentions": [
+        {
+          "surface": "seizures",
+          "hpo_id": "HP:0001250",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": [
+        "photonic elbow aura"
+      ]
+    },
+    {
+      "vignette_id": "v48",
+      "text": "Infant with feeding difficulties and lunar nail shimmer.",
+      "mentions": [
+        {
+          "surface": "feeding difficulties",
+          "hpo_id": "HP:0011968",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": [
+        "lunar nail shimmer"
+      ]
+    },
+    {
+      "vignette_id": "v49",
+      "text": "Patient with ataxia and velvet knuckle sign.",
+      "mentions": [
+        {
+          "surface": "ataxia",
+          "hpo_id": "HP:0001251",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": [
+        "velvet knuckle sign"
+      ]
+    },
+    {
+      "vignette_id": "v50",
+      "text": "Child with global developmental delay and prismatic scalp sheen.",
+      "mentions": [
+        {
+          "surface": "global developmental delay",
+          "hpo_id": "HP:0001263",
+          "polarity": "positive"
+        }
+      ],
+      "unmapped": [
+        "prismatic scalp sheen"
+      ]
+    }
+  ]
+}

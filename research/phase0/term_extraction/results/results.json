@@ -1,0 +1,60 @@
+{
+  "decision": "Ship the polarity-aware rule+lexicon extractor as the Phase 2 default. The naive baseline never emits negated or uncertain labels.",
+  "n_vignettes": 50,
+  "naive_baseline": {
+    "negated": {
+      "f1": 0.0,
+      "fn": 16,
+      "fp": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "tp": 0
+    },
+    "positive": {
+      "f1": 0.8452380952380951,
+      "fn": 0,
+      "fp": 26,
+      "precision": 0.7319587628865979,
+      "recall": 1.0,
+      "tp": 71
+    },
+    "uncertain": {
+      "f1": 0.0,
+      "fn": 10,
+      "fp": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "tp": 0
+    },
+    "unmapped_gold": 5,
+    "unmapped_recall": 1.0
+  },
+  "polarity_aware": {
+    "negated": {
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "tp": 16
+    },
+    "positive": {
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "tp": 71
+    },
+    "uncertain": {
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "tp": 10
+    },
+    "unmapped_gold": 5,
+    "unmapped_recall": 1.0
+  }
+}

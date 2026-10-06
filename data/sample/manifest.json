@@ -1,0 +1,34 @@
+{
+  "samples": [
+    {
+      "sample_id": "classic",
+      "file": "classic.txt",
+      "path_exercised": "distinctive phenotypes, top-1 rank",
+      "expected_behavior": "Polarity-aware ranking places GLUT1 deficiency first. Hypothesis generation, not a diagnosis."
+    },
+    {
+      "sample_id": "negation",
+      "file": "negation.txt",
+      "path_exercised": "negation and ruled-out findings",
+      "expected_behavior": "Naive extraction ranks a seizure/ataxia disease first. Polarity-aware does not; it ranks Prader-Willi first."
+    },
+    {
+      "sample_id": "nonspecific",
+      "file": "nonspecific.txt",
+      "path_exercised": "non-specific phenotypes only",
+      "expected_behavior": "Wide low-confidence set. Output is explicitly insufficient-to-discriminate."
+    },
+    {
+      "sample_id": "lay",
+      "file": "lay.txt",
+      "path_exercised": "lay language mapped onto the HPO subset",
+      "expected_behavior": "floppy baby, small head, and crossed eyes map to hypotonia, microcephaly, and strabismus."
+    },
+    {
+      "sample_id": "unmapped",
+      "file": "unmapped.txt",
+      "path_exercised": "term outside the committed HPO subset",
+      "expected_behavior": "sparkly toenail dystrophy is reported unmapped and is never approximated to a neighbor term."
+    }
+  ]
+}
