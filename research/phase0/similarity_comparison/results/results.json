@@ -1,18 +1,27 @@
 {
-  "decision": "Default measure = phenomizer. Criterion: higher top-1 on the committed simulated patients. Only Resnik and Phenomizer-style are compared.",
+  "decision": "Default measure = phenomizer. Criterion: higher top-1 on the committed simulated patients. Overlap-count is the baseline, not a shipped similarity. DuckDB argmax=overlap.",
   "default_measure": "phenomizer",
   "n_patients": 22,
-  "phenomizer": {
+  "overlap_baseline": {
+    "mrr": 0.9772727272727273,
     "n": 22.0,
-    "sql_top1": 0.9545454545454546,
     "top1": 0.9545454545454546,
-    "top3": 1.0
+    "top20": 1.0,
+    "top5": 1.0
+  },
+  "phenomizer": {
+    "mrr": 0.9696969696969698,
+    "n": 22.0,
+    "top1": 0.9545454545454546,
+    "top20": 1.0,
+    "top5": 1.0
   },
   "resnik": {
+    "mrr": 0.9772727272727273,
     "n": 22.0,
-    "sql_top1": 0.9545454545454546,
     "top1": 0.9545454545454546,
-    "top3": 1.0
+    "top20": 1.0,
+    "top5": 1.0
   },
   "seed": 0
 }

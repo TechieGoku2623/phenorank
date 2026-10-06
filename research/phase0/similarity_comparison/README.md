@@ -2,9 +2,9 @@
 
 ## What is measured
 
-Top-1 and top-3 ranking accuracy of Resnik (asymmetric mean-best IC) and the
-Phenomizer-style symmetric measure on committed simulated patients with known
-disease labels.
+Top-1 / top-5 / top-20 hit rate and MRR of Resnik (asymmetric mean-best IC),
+the Phenomizer-style symmetric measure, and an overlap-count baseline on
+committed simulated patients with known disease labels.
 
 ## Why it decides something
 

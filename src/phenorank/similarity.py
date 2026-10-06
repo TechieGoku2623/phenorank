@@ -58,4 +58,10 @@ def score_pair(
         return resnik_set(query, disease, ontology)
     if measure == "phenomizer":
         return phenomizer_set(query, disease, ontology)
-    raise ValueError(f"unknown measure {measure}; only resnik and phenomizer are implemented")
+    if measure == "overlap":
+        from phenorank.metrics import overlap_count
+
+        return overlap_count(query, disease, ontology)
+    raise ValueError(
+        f"unknown measure {measure}; only resnik, phenomizer, and overlap are implemented"
+    )

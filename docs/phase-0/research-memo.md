@@ -106,12 +106,13 @@ Criterion: higher top-1 on committed simulated patients with known labels.
 
 Measurement: `research/phase0/similarity_comparison/` (n=22 patients).
 
-| measure | top-1 | top-3 | n |
-| --- | --- | --- | --- |
-| resnik (asymmetric) | 0.955 | 1.000 | 22 |
-| phenomizer (symmetric) | 0.955 | 1.000 | 22 |
+| measure | top-1 | top-5 | top-20 | MRR | n |
+| --- | --- | --- | --- | --- | --- |
+| overlap-count (baseline) | 0.955 | 1.000 | 1.000 | 0.977 | 22 |
+| resnik (asymmetric) | 0.955 | 1.000 | 1.000 | 0.977 | 22 |
+| phenomizer (symmetric) | 0.955 | 1.000 | 1.000 | 0.970 | 22 |
 
-Decision: **Default measure = phenomizer. Criterion: higher top-1 on the committed simulated patients. Only Resnik and Phenomizer-style are compared.**
+Decision: **Default measure = phenomizer. Criterion: higher top-1 on the committed simulated patients. Overlap-count is the baseline, not a shipped similarity. DuckDB argmax=overlap.**
 
 ### 4.3 Robustness to noisy input
 
@@ -159,9 +160,10 @@ Metrics, declared before any model is built:
 
 - Extraction P/R/F1 by polarity (positive / negated / uncertain)
 - Unmapped-term recall (must never silently map)
-- Ranking top-1 / top-3 vs known disease labels
-- Baseline: naive extractor + Resnik
-- Second baseline: polarity-aware + Resnik
+- Ranking top-1 / top-5 / top-20 and MRR vs known disease labels
+- Baseline: overlap-count of shared HPO ids
+- Second baseline: naive extractor + Resnik
+- Default: polarity-aware + the winner of §4.2
 - Default: polarity-aware + the winner of §4.2
 - Noise curve from `noise_degradation`
 
@@ -177,7 +179,7 @@ Phase 0 extraction and ranking numbers:
 
 Polarity-aware F1 positive/negated/uncertain = 1.000/1.000/1.000. Naive negated F1 = 0.000.
 
-Resnik top-1 = 0.955; Phenomizer-style top-1 = 0.955 (n=22).
+Overlap-count baseline top-1 = 0.955, MRR = 0.977. Resnik top-1/5/20 = 0.955/1.000/1.000, MRR = 0.977. Phenomizer-style top-1/5/20 = 0.955/1.000/1.000, MRR = 0.970 (n=22).
 
 Clean top-1 = 1.000; harsh top-1 = 0.545. The approach survives realistic input (harsh-cell top-1 ≥ 0.50).
 
@@ -215,13 +217,14 @@ on a 4-core machine, recorded as seconds and peak RSS.
 
 | Phase | Deliverable | Status |
 | --- | --- | --- |
-| 0 | Research memo and harnesses | In review — docs/phase-0/research-memo.md |
-| 1 | Architecture, schemas, data contracts | Not started |
-| 2 | First vertical slice (`phenorank rank`, explanation payload) | Not started |
-| 3 | Evaluation, demo recordings, API | Not started |
+| 0 | Research memo and harnesses | Merged |
+| 1 | Architecture, schemas, data contracts | Merged — docs/ARCHITECTURE.md |
+| 2 | First vertical slice (`phenorank extract` / `rank`) | Merged |
+| 3 | Evaluation, demo recordings, optional POST /rank | Merged |
 
-Phase 0 does not include a rank CLI, FastAPI, or asciinema recordings. Those
-start after this memo is reviewed.
+Phase 2 ships `phenorank extract` and `phenorank rank`. Phase 3 ships
+`make demo`, `make eval` (top-1/5/20, MRR, overlap baseline, noise curve),
+optional `POST /rank`, and asciinema recordings under `demo/`.
 
 ### Highest-risk technical unknowns going into Phase 1
 

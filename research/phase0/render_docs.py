@@ -46,9 +46,16 @@ def render_memo() -> str:
         f"{aware['uncertain']['f1']:.3f}. "
         f"Naive negated F1 = {te['naive_baseline']['negated']['f1']:.3f}."
     )
+    overlap = sim.get("overlap_baseline", sim.get("resnik", {}))
     sim_summary = (
-        f"Resnik top-1 = {sim['resnik']['top1']:.3f}; "
-        f"Phenomizer-style top-1 = {sim['phenomizer']['top1']:.3f} "
+        f"Overlap-count baseline top-1 = {overlap.get('top1', 0):.3f}, "
+        f"MRR = {overlap.get('mrr', 0):.3f}. "
+        f"Resnik top-1/5/20 = {sim['resnik']['top1']:.3f}/"
+        f"{sim['resnik'].get('top5', 0):.3f}/{sim['resnik'].get('top20', 0):.3f}, "
+        f"MRR = {sim['resnik'].get('mrr', 0):.3f}. "
+        f"Phenomizer-style top-1/5/20 = {sim['phenomizer']['top1']:.3f}/"
+        f"{sim['phenomizer'].get('top5', 0):.3f}/{sim['phenomizer'].get('top20', 0):.3f}, "
+        f"MRR = {sim['phenomizer'].get('mrr', 0):.3f} "
         f"(n={sim['n_patients']})."
     )
     noise_summary = (
@@ -101,6 +108,7 @@ def patch_readme() -> None:
     noise = _read(NOISE / "results.json")
     aware = te["polarity_aware"]
     naive = te["naive_baseline"]
+    overlap = sim.get("overlap_baseline", {"top1": 0.0, "mrr": 0.0, "top5": 0.0, "top20": 0.0})
     body = (
         "| System | Result | n | Notes |\n"
         "| --- | --- | --- | --- |\n"
@@ -108,9 +116,15 @@ def patch_readme() -> None:
         f"{te['n_vignettes']} | All mentions labeled positive |\n"
         f"| Polarity-aware extractor | negated F1 {aware['negated']['f1']:.3f} | "
         f"{te['n_vignettes']} | Rules + committed lexicon |\n"
-        f"| Resnik ranking | top-1 {sim['resnik']['top1']:.3f} | "
+        f"| Overlap-count ranking (baseline) | top-1 {overlap['top1']:.3f}; "
+        f"MRR {overlap['mrr']:.3f} | {sim['n_patients']} | Shared-term count |\n"
+        f"| Resnik ranking | top-1/5/20 "
+        f"{sim['resnik']['top1']:.3f}/{sim['resnik'].get('top5', 0):.3f}/"
+        f"{sim['resnik'].get('top20', 0):.3f}; MRR {sim['resnik'].get('mrr', 0):.3f} | "
         f"{sim['n_patients']} | Asymmetric mean-best IC |\n"
-        f"| Phenomizer-style ranking | top-1 {sim['phenomizer']['top1']:.3f} | "
+        f"| Phenomizer-style ranking | top-1/5/20 "
+        f"{sim['phenomizer']['top1']:.3f}/{sim['phenomizer'].get('top5', 0):.3f}/"
+        f"{sim['phenomizer'].get('top20', 0):.3f}; MRR {sim['phenomizer'].get('mrr', 0):.3f} | "
         f"{sim['n_patients']} | Symmetric Resnik |\n"
         f"| Harsh noise cell | top-1 {noise['harsh_top1']:.3f} | "
         f"{int(noise['cells']['drop_0.5_noise_2']['n'])} diseases | "

@@ -23,4 +23,5 @@ Supporting files:
 - `lexicon.json` — phrase → HPO map plus committed out-of-ontology phrases
 - `manifest.json` — what `phenorank demo-plan` prints
 
-No LLM cache is used in Phase 0. No live API.
+`phenorank extract --vignette` and `phenorank rank --vignette` run against
+these files. No LLM cache. No live API. No credentials.

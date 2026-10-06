@@ -1,4 +1,7 @@
-"""Resnik vs Phenomizer-style ranking on simulated patients."""
+"""Resnik vs Phenomizer-style ranking plus overlap-count baseline.
+
+Reports top-1 / top-5 / top-20 and MRR on simulated patients.
+"""
 
 from __future__ import annotations
 
@@ -7,8 +10,8 @@ from pathlib import Path
 
 import duckdb
 
+from phenorank.metrics import ranking_metrics
 from phenorank.ontology import load_ontology
-from phenorank.similarity import score_pair
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from _lib import md_table, pct, write_json  # noqa: E402
@@ -40,56 +43,36 @@ def _patients() -> list[dict[str, object]]:
     return patients
 
 
-def _accuracy(patients: list[dict[str, object]], measure: str) -> dict[str, float]:
-    onto = load_ontology()
-    top1 = 0
-    top3 = 0
-    rows: list[tuple[str, str, float, int]] = []
-    for patient in patients:
-        query = list(patient["hpo_ids"])  # type: ignore[arg-type]
-        ranked = sorted(
-            (
-                (score_pair(query, disease.hpo_ids, measure, onto), disease.id)
-                for disease in onto.diseases
-            ),
-            reverse=True,
-        )
-        gold = str(patient["gold_disease"])
-        order = [disease_id for _, disease_id in ranked]
-        hit1 = int(order[0] == gold)
-        hit3 = int(gold in order[:3])
-        top1 += hit1
-        top3 += hit3
-        rows.append((str(patient["patient_id"]), gold, ranked[0][0], hit1))
-    conn = duckdb.connect(":memory:")
-    conn.execute(
-        "CREATE TABLE ranks (patient_id VARCHAR, gold VARCHAR, top_score DOUBLE, hit1 INTEGER)"
-    )
-    conn.executemany("INSERT INTO ranks VALUES (?, ?, ?, ?)", rows)
-    sql_top1 = float(conn.execute("SELECT AVG(hit1) FROM ranks").fetchone()[0])  # type: ignore[index]
-    n = len(patients)
-    return {
-        "top1": top1 / n,
-        "top3": top3 / n,
-        "sql_top1": sql_top1,
-        "n": float(n),
-    }
-
-
 def main() -> None:
     patients = _patients()
     (HERE / "probe_set").mkdir(parents=True, exist_ok=True)
     write_json(HERE / "probe_set" / "patients.json", {"seed": SEED, "patients": patients})
-    resnik = _accuracy(patients, "resnik")
-    phenomizer = _accuracy(patients, "phenomizer")
+    overlap = ranking_metrics(patients, "overlap")
+    resnik = ranking_metrics(patients, "resnik")
+    phenomizer = ranking_metrics(patients, "phenomizer")
+    conn = duckdb.connect(":memory:")
+    conn.execute("CREATE TABLE m (measure VARCHAR, top1 DOUBLE, mrr DOUBLE)")
+    conn.executemany(
+        "INSERT INTO m VALUES (?, ?, ?)",
+        [
+            ("overlap", overlap["top1"], overlap["mrr"]),
+            ("resnik", resnik["top1"], resnik["mrr"]),
+            ("phenomizer", phenomizer["top1"], phenomizer["mrr"]),
+        ],
+    )
+    sql_best = str(
+        conn.execute("SELECT measure FROM m ORDER BY top1 DESC, mrr DESC LIMIT 1").fetchone()[0]
+    )
     winner = "phenomizer" if phenomizer["top1"] >= resnik["top1"] else "resnik"
     decision = (
         f"Default measure = {winner}. Criterion: higher top-1 on the committed "
-        "simulated patients. Only Resnik and Phenomizer-style are compared."
+        "simulated patients. Overlap-count is the baseline, not a shipped similarity. "
+        f"DuckDB argmax={sql_best}."
     )
     payload = {
         "seed": SEED,
         "n_patients": len(patients),
+        "overlap_baseline": overlap,
         "resnik": resnik,
         "phenomizer": phenomizer,
         "default_measure": winner,
@@ -98,18 +81,30 @@ def main() -> None:
     RESULTS.mkdir(parents=True, exist_ok=True)
     write_json(RESULTS / "results.json", payload)
     table = md_table(
-        ["measure", "top-1", "top-3", "n"],
+        ["measure", "top-1", "top-5", "top-20", "MRR", "n"],
         [
+            [
+                "overlap-count (baseline)",
+                pct(overlap["top1"]),
+                pct(overlap["top5"]),
+                pct(overlap["top20"]),
+                pct(overlap["mrr"]),
+                str(int(overlap["n"])),
+            ],
             [
                 "resnik (asymmetric)",
                 pct(resnik["top1"]),
-                pct(resnik["top3"]),
+                pct(resnik["top5"]),
+                pct(resnik["top20"]),
+                pct(resnik["mrr"]),
                 str(int(resnik["n"])),
             ],
             [
                 "phenomizer (symmetric)",
                 pct(phenomizer["top1"]),
-                pct(phenomizer["top3"]),
+                pct(phenomizer["top5"]),
+                pct(phenomizer["top20"]),
+                pct(phenomizer["mrr"]),
                 str(int(phenomizer["n"])),
             ],
         ],

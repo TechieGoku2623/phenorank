@@ -24,8 +24,20 @@ eval:
 	$(UV) run python research/phase0/render_docs.py
 
 demo:
-	$(UV) run phenorank demo-plan
+	@echo "=== phenorank extract classic ==="
+	$(UV) run phenorank extract --vignette data/sample/classic.txt
+	@echo
+	@echo "=== phenorank rank classic --explain ==="
+	$(UV) run phenorank rank --vignette data/sample/classic.txt --explain
+	@echo
+	@echo "=== phenorank rank negation --compare-naive ==="
+	$(UV) run phenorank rank --vignette data/sample/negation.txt --compare-naive
+	@echo
+	@echo "=== phenorank rank nonspecific ==="
+	$(UV) run phenorank rank --vignette data/sample/nonspecific.txt
+	@echo
+	@echo "=== phenorank extract unmapped ==="
+	$(UV) run phenorank extract --vignette data/sample/unmapped.txt
 
 record:
-	@echo "Asciinema recordings are a Phase 3 deliverable."
-	@echo "Phase 0 has no rank CLI to record."
+	$(UV) run python scripts/record_casts.py

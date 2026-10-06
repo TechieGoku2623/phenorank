@@ -35,6 +35,7 @@ def test_set_measures() -> None:
     assert resnik_set([], disease, onto) == 0.0
     with pytest.raises(ValueError, match="unknown measure"):
         score_pair(query, disease, "jaccard", onto)
+    assert score_pair(query, disease, "overlap", onto) == 2.0
 
 
 def test_descendants_include_self() -> None:
