@@ -18,7 +18,7 @@ from phenorank.render import render_compare, render_extract, render_rank
 from phenorank.schemas import MeasureName, SampleCase
 
 app = typer.Typer(no_args_is_help=True, add_completion=False)
-console = Console(width=160, highlight=False, soft_wrap=True)
+console = Console(width=100, highlight=False, soft_wrap=True)
 
 
 def _load_samples() -> list[SampleCase]:
@@ -95,6 +95,7 @@ def rank_cmd(
         False, "--compare-naive", help="Side-by-side polarity-aware vs naive ranks."
     ),
     measure: MeasureName = typer.Option("phenomizer", "--measure"),
+    summary: bool = typer.Option(False, "--summary", help="Top-2 plus next-test line"),
 ) -> None:
     """Rank designed disease profiles. Hypothesis generation, not a diagnosis."""
 
@@ -105,7 +106,25 @@ def rank_cmd(
         naive = rank_text(text, polarity_aware=False, measure=measure, ontology=onto)
         print(render_compare(aware, naive))
         return
-    print(render_rank(aware, explain=explain))
+    print(render_rank(aware, explain=explain, limit=2 if summary else 8))
+
+
+@app.command("eval")
+def eval_cmd(
+    summary: bool = typer.Option(True, "--summary/--full"),
+) -> None:
+    """Print accuracy under degraded input from the committed eval table."""
+
+    path = get_settings().repo_root / "docs" / "EVALUATION.md"
+    n = 0
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.startswith("# Evaluation"):
+            continue
+        print(line[:100])
+        if line.strip():
+            n += 1
+        if n >= 14:
+            break
 
 
 @app.command("serve")

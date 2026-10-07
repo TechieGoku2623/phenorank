@@ -1,0 +1,3 @@
+1
+00:00:04,473 --> 00:00:07,973
+Each term tagged positive, negated, or uncertain

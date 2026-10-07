@@ -1,0 +1,4 @@
+1
+00:00:02,140 --> 00:00:08,140
+Accuracy under degraded input, because real input is always
+degraded

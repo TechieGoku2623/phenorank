@@ -1,0 +1,39 @@
+title: phenorank
+tagline: Phenotype-driven candidate gene and disease ranking over HPO
+problem:
+  - Rare disease patients average years and many specialists before diagnosis.
+  - Prioritization tools exist but rarely explain their ranking.
+  - A rank without a reason is not clinically actionable.
+shots:
+  - id: 01-extract
+    command: phenorank extract --vignette data/sample/classic.txt
+    caption: Each term tagged positive, negated, or uncertain
+    hold: 3.5
+    highlight: "positive|negated|uncertain"
+    failure_beat: false
+  - id: 02-rank
+    command: phenorank rank --vignette data/sample/classic.txt --explain --summary
+    caption: Driving phenotypes, absent phenotypes, and the discriminating next test
+    hold: 4.5
+    highlight: "next test"
+    failure_beat: false
+  - id: 03-negation
+    command: phenorank rank --vignette data/sample/negation.txt --compare-naive
+    caption: '"No seizures" read as present gives a different top-1'
+    hold: 5.0
+    highlight: "top-1 differs|naive top-1|polarity-aware top-1"
+    failure_beat: true
+  - id: 04-nonspecific
+    command: phenorank rank --vignette data/sample/nonspecific.txt
+    caption: Phenotypes insufficient to discriminate — wide set, low confidence
+    hold: 4.0
+    highlight: "insufficient"
+    failure_beat: false
+results:
+  command: phenorank eval --summary
+  caption: Accuracy under degraded input, because real input is always degraded
+  hold: 6.0
+end_card:
+  url: github.com/techiegoku2623/phenorank
+  license: MIT
+gif_beat: 03-negation

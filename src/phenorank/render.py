@@ -44,13 +44,20 @@ def _candidate_block(response: RankResponse, *, explain: bool, limit: int = 8) -
         if explain:
             driving = "; ".join(candidate.driving_phenotypes) or "(none)"
             absent = "; ".join(candidate.expected_but_absent) or "(none)"
+            if len(driving) > 68:
+                driving = driving[:65] + "..."
+            if len(absent) > 68:
+                absent = absent[:65] + "..."
             lines.append(f"      driving:              {driving}")
             lines.append(f"      expected-but-absent:  {absent}")
-            lines.append(f"      next test:            {candidate.additional_test}")
+            next_test = candidate.additional_test
+            if len(next_test) > 68:
+                next_test = next_test[:65] + "..."
+            lines.append(f"      next test:            {next_test}")
     return lines
 
 
-def render_rank(response: RankResponse, *, explain: bool = False) -> str:
+def render_rank(response: RankResponse, *, explain: bool = False, limit: int = 8) -> str:
     lines = [
         SAFETY_DISCLAIMER,
         "",
@@ -61,7 +68,7 @@ def render_rank(response: RankResponse, *, explain: bool = False) -> str:
         "ranked candidates (hypothesis list, not a diagnosis)",
         "",
     ]
-    lines.extend(_candidate_block(response, explain=explain))
+    lines.extend(_candidate_block(response, explain=explain, limit=limit))
     if response.unmapped:
         lines.append("")
         lines.append("unmapped (not approximated):")
@@ -85,17 +92,17 @@ def render_compare(aware: RankResponse, naive: RankResponse) -> str:
         "",
         "side-by-side ranking: polarity-aware vs naive (all mentions positive)",
         "",
-        f"{'rank':<6}{'aware id':<24}{'aware name':<36}{'naive id':<24}{'naive name'}",
+        "rank  polarity-aware                         naive (all mentions +)",
     ]
     n = max(len(aware.candidates), len(naive.candidates))
-    for i in range(min(n, 8)):
+    for i in range(min(n, 4)):
         a = aware.candidates[i] if i < len(aware.candidates) else None
         b = naive.candidates[i] if i < len(naive.candidates) else None
         a_id = a.disease_id if a else ""
-        a_name = a.name if a else ""
+        a_name = (a.name if a else "")[:28]
         b_id = b.disease_id if b else ""
-        b_name = b.name if b else ""
-        lines.append(f"{i + 1:<6}{a_id:<24}{a_name:<36}{b_id:<24}{b_name}")
+        b_name = (b.name if b else "")[:28]
+        lines.append(f"{i + 1:<4}  {a_id:<16} {a_name:<28}  {b_id:<16} {b_name}")
     lines.append("")
     if aware_top and naive_top:
         lines.append(f"polarity-aware top-1: {aware_top.disease_id}  {aware_top.name}")

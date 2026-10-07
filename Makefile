@@ -1,7 +1,7 @@
 export PATH := $(HOME)/.local/bin:$(PATH)
 UV ?= uv
 
-.PHONY: setup lint test research eval demo record
+.PHONY: demo-shots setup lint test research eval demo record
 
 setup:
 	$(UV) sync --extra dev
@@ -39,5 +39,9 @@ demo:
 	@echo "=== phenorank extract unmapped ==="
 	$(UV) run phenorank extract --vignette data/sample/unmapped.txt
 
+demo-shots:
+	$(UV) run --with pyyaml python demo/verify_shots.py
+
 record:
-	$(UV) run python scripts/record_casts.py
+	bash demo/record.sh
+	bash demo/render.sh
